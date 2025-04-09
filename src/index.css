@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fffbeb;
+  color: #78350f;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Animation pour plats du menu */
+.menu-item-hover {
+  @apply transition-transform duration-300;
+}
+
+.menu-item-hover:hover {
+  @apply -translate-y-1 shadow-lg;
+}
+
+/* Animation de dégradé pour les boutons */
+.btn-gradient {
+  @apply bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800;
+}
+
+/* Styles personnalisés pour les cartes de plats */
+.dish-card {
+  @apply overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300;
+}
+
+.dish-card:hover {
+  @apply shadow-xl transform -translate-y-1;
+}
+
+.dish-card-image {
+  @apply h-48 w-full object-cover transition-transform duration-500;
+}
+
+.dish-card:hover .dish-card-image {
+  @apply scale-110;
+}
+
+/* Animation pour le texte qui apparaît */
+.fade-in-text {
+  @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
+}
+
+.fade-in-visible {
+  @apply opacity-100 translate-y-0;
+}
+
+/* Style pour les dividers décoratifs */
+.decorative-divider {
+  @apply relative mx-auto my-8 h-0.5 w-24 bg-amber-600;
+}
+
+.decorative-divider::before,
+.decorative-divider::after {
+  content: '';
+  @apply absolute top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-amber-800;
+}
+
+.decorative-divider::before {
+  @apply -left-3;
+}
+
+.decorative-divider::after {
+  @apply -right-3;
+}
